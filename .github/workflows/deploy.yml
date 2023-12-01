@@ -8,6 +8,12 @@ jobs:
   test:
     environment: testing
     runs-on: ubuntu-latest
+    env:
+      MONGODB_CLUSTER_ADDRESS: ${{secrets.MONGODB_CLUSTER_ADDRESS}}
+      MONGODB_USERNAME: ${{secrets.MONGODB_USERNAME}}
+      MONGODB_PASSWORD: ${{secrets.MONGODB_PASSWORD}}
+      PORT: 3000
+      # MONGODB_DB_NAME:
     steps:
       - name: Get Code
         uses: actions/checkout@v3
